@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script crossorigin="anonymous"
+    src="https://www.datadoghq-browser-agent.com/datadog-rum-v4.js"
+    type="text/javascript">
+</script>
+<script>
+    window.DD_RUM && window.DD_RUM.init({
+        applicationId: '631175a2-a61b-4d3c-8d6a-6491cf8078c3',
+        clientToken: 'pub573447b390f4235c0846f36e697a7d53',
+        site: 'datadoghq.com',
+        service:'test-electron',
+        // Specify a version number to identify the deployed version of your application in Datadog 
+        // version: '1.0.0',
+        sampleRate: 100,
+        trackInteractions: true,
+        defaultPrivacyLevel: 'mask-user-input'
+    }); 
+
+    window.DD_RUM &&
+    window.DD_RUM.startSessionReplayRecording();
+</script>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <img src="https://unsplash.it/200/200" alt="CSP Should Block This Image From Loading" id="cspImg">
+    We are using Node.js <span id="node-version"></span>,
+    Chromium <span id="chrome-version"></span>,
+    and Electron <span id="electron-version"></span>.
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
+</html>
