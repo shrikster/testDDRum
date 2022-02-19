@@ -2,3 +2,4 @@
   Access-Control-Allow-Origin: *
   X-Robots-Tag: nosnippet
   x-bar: bar,
+  Content-Security-Policy: 'script-src https://www.datadoghq-browser-agent.com;'
